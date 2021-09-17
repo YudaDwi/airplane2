@@ -22,3 +22,10 @@ FontWeight semibold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
 FontWeight extraBold = FontWeight.w800;
 FontWeight black = FontWeight.w900;
+
+TextStyle whiteTextStyle = GoogleFonts.poppins(color: kWhiteColor);
+TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);
+TextStyle greyTextStyle = GoogleFonts.poppins(color: kGreyColor);
+TextStyle greenTextStyle = GoogleFonts.poppins(color: kGreenColor);
+TextStyle redTextStyle = GoogleFonts.poppins(color: kRedColor);
+TextStyle purpleTextStyle = GoogleFonts.poppins(color: kPrimaryColor);
