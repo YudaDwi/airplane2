@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashPage(),
         '/get-started': (context) => GetStarted(),
         '/sign-up': (context) => SignUpPage(),
+        '/bonus': (context) => BonusPage(),
       },
     );
   }

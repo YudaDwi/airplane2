@@ -32,7 +32,9 @@ class SignUpPage extends StatelessWidget {
             CustomTextFormField(title: 'Hobby', hintText: 'Your Hobby'),
             CustomButton(
               title: 'Get Started',
-              onPresed: () {},
+              onPresed: () {
+                Navigator.pushNamed(context, '/bonus');
+              },
               margin: EdgeInsets.only(top: 10),
             )
           ],
