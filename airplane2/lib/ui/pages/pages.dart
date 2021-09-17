@@ -8,3 +8,4 @@ part 'splash_page.dart';
 part 'get_started.dart';
 part 'sign_up_page.dart';
 part 'bonus_page.dart';
+part 'main_page.dart';
