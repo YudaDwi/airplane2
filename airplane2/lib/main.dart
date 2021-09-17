@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashPage(),
         '/get-started': (context) => GetStarted(),
+        '/sign-up': (context) => SignUpPage(),
       },
     );
   }
