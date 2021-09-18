@@ -31,5 +31,5 @@ TextStyle greenTextStyle = GoogleFonts.poppins(color: kGreenColor);
 TextStyle redTextStyle = GoogleFonts.poppins(color: kRedColor);
 TextStyle purpleTextStyle = GoogleFonts.poppins(color: kPrimaryColor);
 
-double defautlMargin = 24;
+double defaultMargin = 24;
 double defaultRadius = 17;

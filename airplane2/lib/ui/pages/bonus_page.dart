@@ -11,7 +11,7 @@ class BonusPage extends StatelessWidget {
         height: 211,
         width: double.infinity,
         padding: EdgeInsets.symmetric(
-            horizontal: defautlMargin, vertical: defautlMargin),
+            horizontal: defaultMargin, vertical: defaultMargin),
         decoration: BoxDecoration(
             color: kPrimaryColor.withOpacity(0.8),
             borderRadius: BorderRadius.circular(34)),

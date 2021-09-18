@@ -5,12 +5,16 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget buildContent() {
+      return HomePage();
+    }
+
     Widget customButomNavigation() {
       return Align(
         alignment: Alignment.bottomCenter,
         child: Container(
           margin: EdgeInsets.only(
-              left: defautlMargin, right: defautlMargin, bottom: 30),
+              left: defaultMargin, right: defaultMargin, bottom: 30),
           height: 60,
           width: double.infinity,
           decoration: BoxDecoration(
@@ -34,8 +38,14 @@ class MainPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: [customButomNavigation()],
+      body: SafeArea(
+        child: Stack(
+          children: [
+            //jadi pada main page itu semua harus dipanggil menggunakan widget dan harus sesuai urutan
+            buildContent(),
+            customButomNavigation(),
+          ],
+        ),
       ),
     );
   }
