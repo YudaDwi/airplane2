@@ -12,6 +12,7 @@ Color kBackgroundColor = Color(0xffFAFAFA);
 //warna pd stroke textfield
 Color kInactiveColor = Color(0xff5C40CC);
 Color kTransaparentColor = Colors.transparent;
+Color unAvailableColor = Color(0xffEBECF1);
 
 //mungkin akan jadi fontweight standar
 FontWeight thin = FontWeight.w100;

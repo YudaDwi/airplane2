@@ -7,3 +7,6 @@ part 'custom_text_form_field.dart';
 part 'custom_buttom_navigation.dart';
 part 'popular_destination_item.dart';
 part 'destination_tile.dart';
+part 'photos_item.dart';
+part 'item_check.dart';
+part 'seat_item.dart';

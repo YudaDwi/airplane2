@@ -50,7 +50,7 @@ class DetailPage extends StatelessWidget {
             ),
             //text
             Container(
-              margin: EdgeInsets.only(top: 310),
+              margin: EdgeInsets.only(top: 256),
               child: Row(
                 children: [
                   Expanded(
@@ -89,6 +89,127 @@ class DetailPage extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            //about detail
+            Container(
+              //margin dgn atas ini
+              margin: EdgeInsets.only(top: 30),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              decoration: BoxDecoration(
+                  color: kWhiteColor, borderRadius: BorderRadius.circular(18)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'About',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 16, fontWeight: semibold),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Text(
+                    'Berada di jalur jalan provinsi yang\nmenghubungkan Denpasar\nSingaraja serta letaknya yang dekat\ndengan Kebun Raya Eka Karya\nmenjadikan tempat Bali.',
+                    style: blackTextStyle,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Photos',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 16, fontWeight: semibold),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    children: [
+                      PhotosItem(
+                        imageUrl: 'assets/image_photo1.png',
+                      ),
+                      PhotosItem(
+                        imageUrl: 'assets/image_photo2.png',
+                      ),
+                      PhotosItem(
+                        imageUrl: 'assets/image_photo3.png',
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Interests',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 16, fontWeight: semibold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      ItemCheck(
+                        title: 'Kids Park',
+                      ),
+                      ItemCheck(
+                        title: 'Honor Bridge',
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      ItemCheck(
+                        title: 'City Museum',
+                      ),
+                      ItemCheck(
+                        title: 'Central Mall',
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            //
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 31),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR 2.500.000',
+                          style: blackTextStyle.copyWith(
+                              fontSize: 18, fontWeight: medium),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'per orang',
+                          style: greyTextStyle.copyWith(fontWeight: light),
+                        )
+                      ],
+                    ),
+                  ),
+                  CustomButton(
+                    title: 'Book Now',
+                    onPresed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ChooseSeatPage()));
+                    },
+                    width: 170,
+                  )
+                ],
+              ),
             )
           ],
         ),
@@ -97,8 +218,14 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: kBackgroundColor,
-        body: Stack(
-          children: [backgroundImage(), customShadow(), content()],
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              backgroundImage(),
+              customShadow(),
+              content(),
+            ],
+          ),
         ));
   }
 }
