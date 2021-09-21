@@ -12,3 +12,5 @@ part 'main_page.dart';
 part 'home_page.dart';
 part 'detail_page.dart';
 part 'choose_seat_page.dart';
+part 'checkout_page.dart';
+part 'succes_checkout_page.dart';
