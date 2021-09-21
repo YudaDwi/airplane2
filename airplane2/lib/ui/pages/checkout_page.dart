@@ -233,7 +233,10 @@ class CheckOutPage extends StatelessWidget {
     Widget payButton() {
       return CustomButton(
         title: 'Pay Now',
-        onPresed: () {},
+        onPresed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => SuccesCheckoutPage()));
+        },
         margin: EdgeInsets.only(top: 30),
       );
     }
