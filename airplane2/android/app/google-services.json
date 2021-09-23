@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "828045660605",
+    "project_id": "airplane2-57913",
+    "storage_bucket": "airplane2-57913.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828045660605:android:bb378ebc6f8ad6ec0d82d4",
+        "android_client_info": {
+          "package_name": "com.yuda.airplane2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828045660605-hr5hp8i4u31iavckuu3d9c8l0eotmgsn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHrhtScpr3iKbwH5cMBBjEQf5XvxVC61E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828045660605-hr5hp8i4u31iavckuu3d9c8l0eotmgsn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
