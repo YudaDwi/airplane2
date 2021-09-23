@@ -1,31 +1,45 @@
 part of 'widgets.dart';
 
 class CustomButtonNavigationItem extends StatelessWidget {
+  final int index;
   final String imageUrl;
-  final bool isSelected;
+
   const CustomButtonNavigationItem(
-      {Key? key, required this.imageUrl, this.isSelected = false})
+      {Key? key, required this.imageUrl, required this.index})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(),
-        Container(
-          height: 24,
-          width: 24,
-          decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage(imageUrl))),
-        ),
-        Container(
-          width: 30,
-          height: 2,
-          decoration: BoxDecoration(
-              color: isSelected ? kPrimaryColor : kTransaparentColor),
-        )
-      ],
+    return GestureDetector(
+      onTap: () {
+        context.read<PageCubit>().setPage(index);
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(),
+          //use state for conditions
+          //what state (color) == index
+          Image.asset(
+            imageUrl,
+            height: 24,
+            width: 24,
+            color: context.read<PageCubit>().state == index
+                ? kPrimaryColor
+                : kGreyColor,
+          ),
+          Container(
+            width: 30,
+            height: 2,
+            decoration: BoxDecoration(
+                //use state for conditions
+                //what state == index
+                color: context.read<PageCubit>().state == index
+                    ? kPrimaryColor
+                    : kTransaparentColor),
+          )
+        ],
+      ),
     );
   }
 }

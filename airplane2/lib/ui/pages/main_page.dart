@@ -5,8 +5,22 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget buildContent() {
-      return HomePage();
+    //show active index
+    Widget buildContent(int currentIndex) {
+      //create switch for currentIndex
+
+      switch (currentIndex) {
+        case 0:
+          return HomePage();
+        case 1:
+          return TransactionPage();
+        case 2:
+          return WalletPage();
+        case 3:
+          return SettingPage();
+        default:
+          return HomePage();
+      }
     }
 
     Widget customButomNavigation() {
@@ -25,28 +39,43 @@ class MainPage extends StatelessWidget {
               //
               CustomButtonNavigationItem(
                 imageUrl: 'assets/icon_home.png',
-                isSelected: true,
+                index: 0,
               ),
-              CustomButtonNavigationItem(imageUrl: 'assets/icon_booking.png'),
-              CustomButtonNavigationItem(imageUrl: 'assets/icon_card.png'),
-              CustomButtonNavigationItem(imageUrl: 'assets/icon_settings.png'),
+              CustomButtonNavigationItem(
+                imageUrl: 'assets/icon_booking.png',
+                index: 1,
+              ),
+              CustomButtonNavigationItem(
+                imageUrl: 'assets/icon_card.png',
+                index: 2,
+              ),
+              CustomButtonNavigationItem(
+                imageUrl: 'assets/icon_settings.png',
+                index: 3,
+              ),
             ],
           ),
         ),
       );
     }
 
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            //jadi pada main page itu semua harus dipanggil menggunakan widget dan harus sesuai urutan
-            buildContent(),
-            customButomNavigation(),
-          ],
-        ),
-      ),
+    //set bloc builder
+    return BlocBuilder<PageCubit, int>(
+      builder: (context, currentIndex) {
+        return Scaffold(
+          backgroundColor: kBackgroundColor,
+          body: SafeArea(
+            child: Stack(
+              children: [
+                //jadi pada main page itu semua harus dipanggil menggunakan widget dan harus sesuai urutan
+                //in here we changed stete to current index
+                buildContent(currentIndex),
+                customButomNavigation(),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
