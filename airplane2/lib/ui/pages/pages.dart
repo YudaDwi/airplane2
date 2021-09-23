@@ -14,3 +14,6 @@ part 'detail_page.dart';
 part 'choose_seat_page.dart';
 part 'checkout_page.dart';
 part 'succes_checkout_page.dart';
+part 'wallet_page.dart';
+part 'transaction_page.dart';
+part 'setting_page.dart';
