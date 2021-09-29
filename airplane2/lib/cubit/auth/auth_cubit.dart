@@ -1,4 +1,5 @@
 import 'package:airplane2/model/model.dart';
+import 'package:airplane2/services/services.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -16,6 +17,11 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       AuthLoading();
       //buat objek baru yg berdasarkan blueprint/usermodel dan dipaskan dgn userservices
-    } catch (e) {}
+      UserModel user = await AuthServices.signUp(
+          name: name, email: email, password: password, hobby: hobby);
+      emit(AuthSucces(user));
+    } catch (e) {
+      emit(AuthFailed(e.toString()));
+    }
   }
 }

@@ -1,6 +1,6 @@
 part of 'services.dart';
 
-class AuthService {
+class AuthServices {
   //buat objek auth yg berdasarkan dari package firebaseAuth
   static FirebaseAuth _auth = FirebaseAuth.instance;
 

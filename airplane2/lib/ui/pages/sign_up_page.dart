@@ -1,7 +1,11 @@
 part of 'pages.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController hobbyController = TextEditingController();
+  // const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +25,27 @@ class SignUpPage extends StatelessWidget {
             color: kWhiteColor, borderRadius: BorderRadius.circular(18)),
         child: Column(
           children: [
-            CustomTextFormField(title: 'Full Name', hintText: 'Your Full Name'),
             CustomTextFormField(
-                title: 'Email Address', hintText: 'Your Email Address'),
+              title: 'Full Name',
+              hintText: 'Your Full Name',
+              controller: nameController,
+            ),
+            CustomTextFormField(
+              title: 'Email Address',
+              hintText: 'Your Email Address',
+              controller: emailController,
+            ),
             CustomTextFormField(
               title: 'Password',
               hintText: 'Your Password',
               obsecureText: true,
+              controller: passwordController,
             ),
-            CustomTextFormField(title: 'Hobby', hintText: 'Your Hobby'),
+            CustomTextFormField(
+              title: 'Hobby',
+              hintText: 'Your Hobby',
+              controller: hobbyController,
+            ),
             CustomButton(
               title: 'Get Started',
               onPresed: () {
