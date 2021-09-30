@@ -6,7 +6,7 @@ class AuthServices {
 
   //buat fungsi yg mengembalikan usermode
 
-  static Future<UserModel> signUp(
+  Future<UserModel> signUp(
       {required String name,
       required String email,
       required String password,

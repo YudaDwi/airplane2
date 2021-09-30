@@ -14,13 +14,14 @@ class _SplashPageState extends State<SplashPage> {
       //buat objek user saat ini
 
       User? user = FirebaseAuth.instance.currentUser;
-      //TODO if user saat ini null maka akan diarahkan ke getstartedpage
       //kalau tidak langsung navigator pushnameremoveuntil
       if (user == null) {
         Navigator.pushNamedAndRemoveUntil(
             context, '/get-started', (route) => false);
       } else {
         print(user.email);
+        //TODO harus nyari fungsi ini
+        context.read<AuthCubit>().getCurrentUser(user.uid);
         Navigator.pushNamedAndRemoveUntil(context, '/main', (route) => false);
       }
     });

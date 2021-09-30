@@ -17,8 +17,8 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       AuthLoading();
       //buat objek baru yg berdasarkan blueprint/usermodel dan dipaskan dgn userservices
-      UserModel user = await AuthServices.signUp(
-          name: name, email: email, password: password, hobby: hobby);
+      UserModel user = await AuthServices()
+          .signUp(name: name, email: email, password: password, hobby: hobby);
       emit(AuthSucces(user));
     } catch (e) {
       emit(AuthFailed(e.toString()));
@@ -31,6 +31,16 @@ class AuthCubit extends Cubit<AuthState> {
       await AuthServices.signOut();
       //so after this moment .this state back to auth initial
       emit(AuthInitial());
+    } catch (e) {
+      emit(AuthFailed(e.toString()));
+    }
+  }
+
+  void getCurrentUser(String id) async {
+    try {
+      //buat objek baru yg berdasarkan blueprint/usermodel dan dipasangkan dgn userservices
+      UserModel user = await UserServices().getUserById(id);
+      emit(AuthSucces(user));
     } catch (e) {
       emit(AuthFailed(e.toString()));
     }

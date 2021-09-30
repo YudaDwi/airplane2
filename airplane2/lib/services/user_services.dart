@@ -21,4 +21,20 @@ class UserServices {
       throw e;
     }
   }
+
+  Future<UserModel> getUserById(String id) async {
+    try {
+      //buat objek snapshot yg berisi menunggu objek userreference yang akan men get
+      //dan di return ke user model yg mengambil dgn snapshot key tsb
+      DocumentSnapshot snapshot = await _userReference.doc(id).get();
+      return UserModel(
+          id: id,
+          name: snapshot['name'],
+          email: snapshot['email'],
+          hobby: snapshot['hobby'],
+          balance: snapshot['balance']);
+    } catch (e) {
+      throw e;
+    }
+  }
 }

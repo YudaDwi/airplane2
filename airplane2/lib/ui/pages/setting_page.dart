@@ -23,6 +23,7 @@ class SettingPage extends StatelessWidget {
         }
         return Center(
           child: CustomButton(
+              margin: EdgeInsets.symmetric(horizontal: defaultMargin),
               title: 'sign out',
               onPresed: () {
                 context.read<AuthCubit>().signOut();
