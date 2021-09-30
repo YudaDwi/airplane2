@@ -27,8 +27,18 @@ class AuthServices {
           balance: 28000000);
 
       //menunggu userservices yg punya data
+      //jadi ini nanti datanya akan mask di cloudfirestore
       await UserServices().setUser(user);
       return user;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  static Future<void> signOut() async {
+    try {
+      //signout disini sudah ada dari fiture firebase
+      await _auth.signOut();
     } catch (e) {
       throw e;
     }

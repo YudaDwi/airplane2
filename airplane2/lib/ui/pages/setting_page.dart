@@ -5,11 +5,30 @@ class SettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: Center(
-        child: Text('Setting page'),
-      ),
+    return BlocConsumer<AuthCubit, AuthState>(
+      listener: (context, state) {
+        if (state is AuthFailed) {
+          ScaffoldMessenger.of(context)
+              //eror disini dari authfailed
+              .showSnackBar(SnackBar(
+                  backgroundColor: kRedColor, content: Text(state.error)));
+        } else if (state is AuthInitial) {
+          Navigator.pushNamedAndRemoveUntil(
+              context, '/sign-up', (route) => false);
+        }
+      },
+      builder: (context, state) {
+        if (state is AuthLoading) {
+          return CircularProgressIndicator();
+        }
+        return Center(
+          child: CustomButton(
+              title: 'sign out',
+              onPresed: () {
+                context.read<AuthCubit>().signOut();
+              }),
+        );
+      },
     );
   }
 }

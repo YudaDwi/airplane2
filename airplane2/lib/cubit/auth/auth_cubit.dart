@@ -24,4 +24,15 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthFailed(e.toString()));
     }
   }
+
+  void signOut() async {
+    try {
+      emit(AuthLoading());
+      await AuthServices.signOut();
+      //so after this moment .this state back to auth initial
+      emit(AuthInitial());
+    } catch (e) {
+      emit(AuthFailed(e.toString()));
+    }
+  }
 }
